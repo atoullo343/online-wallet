@@ -1,4 +1,4 @@
-if (process.env.NODE_ENV !== "production") {
+if (process.env.NODE_ENV === "production") {
   require("dotenv").config()
 }
 
@@ -21,13 +21,13 @@ mongoose.connect(process.env.DB_URL, {
   useUnifiedTopology: true,
   useFindAndModify: false
 })
-.then( () => console.log('MongoDB connected...'))
-.catch(err => console.log(err));
+// .then( () => console.log('MongoDB connected...'))
+// .catch(err => console.log(err));
 // Connect to MongoDB
-// const db = mongoose.connection
+const db = mongoose.connection
 
-// db.once("open", () => console.log("MongoDb connected..."))
-// db.on("error", (err) => console.log("Mongo DB ulanmadi: " + err))
+db.once("open", () => console.log("MongoDb connected..."))
+db.on("error", (err) => console.log("Mongo DB ulanmadi: " + err))
 
 //view engine set
 // app.engine('hbs', hbs({ extname: 'hbs', defaultLayout: 'layout', layoutsDir: __dirname + '/views/layouts' }))
