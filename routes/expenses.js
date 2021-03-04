@@ -30,7 +30,7 @@ router.post('/create', ensureAuthenticated, async (req, res) => {
 
 
 // Get all product 
-router.get('/getAll', async (req, res) => {
+router.get('/getAll', ensureAuthenticated, async (req, res) => {
     let products = await Product.find().lean()
     
     res.render('getAll', { products });
