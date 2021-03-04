@@ -4,7 +4,7 @@ const { ensureAuthenticated } = require('../config/auth')
 
 // Get home page
 router.get('/', (req, res) => {
-    res.render('login', {title: 'Login page'})
+    res.render('register', {title: 'Login page'})
 })
 
 // Get dashboard page
