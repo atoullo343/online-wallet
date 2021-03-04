@@ -4,7 +4,10 @@
   "description": "see your charges",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "12.18.2"
   },
   "author": "Atoullo343",
   "license": "ISC",
