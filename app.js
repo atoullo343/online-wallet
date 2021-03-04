@@ -16,7 +16,7 @@ const bodyParser = require('body-parser')
 require("./config/passport")(passport)
 
 // connect to mongoDB
-mongoose.connect(process.env.db_url, {
+mongoose.connect(process.env.DB_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false
