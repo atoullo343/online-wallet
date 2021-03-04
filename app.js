@@ -21,11 +21,11 @@ mongoose.connect(process.env.DB_URL, {
   useUnifiedTopology: true,
   useFindAndModify: false
 })
-
-// Connect to MongoDB
-const db = mongoose.connection
-db.then( () => console.log('MongoDB connected...'))
+.then( () => console.log('MongoDB connected...'))
 .catch(err => console.log(err));
+// Connect to MongoDB
+// const db = mongoose.connection
+
 // db.once("open", () => console.log("MongoDb connected..."))
 // db.on("error", (err) => console.log("Mongo DB ulanmadi: " + err))
 
