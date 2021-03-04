@@ -24,7 +24,7 @@ mongoose.connect(process.env.DB_URL, {
 
 // Connect to MongoDB
 const db = mongoose.connection
-.then( () => console.log('MongoDB connected...'))
+db.then( () => console.log('MongoDB connected...'))
 .catch(err => console.log(err));
 // db.once("open", () => console.log("MongoDb connected..."))
 // db.on("error", (err) => console.log("Mongo DB ulanmadi: " + err))
