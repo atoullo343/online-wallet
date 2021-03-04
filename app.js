@@ -24,8 +24,8 @@ mongoose.connect(process.env.db_url, {
 
 // Connect to MongoDB
 const db = mongoose.connection
-db.on("error", (err) => console.log("Mongo DB ulanmadi: " + err))
 db.once("open", () => console.log("MongoDb connected..."))
+db.on("error", (err) => console.log("Mongo DB ulanmadi: " + err))
 
 //view engine set
 // app.engine('hbs', hbs({ extname: 'hbs', defaultLayout: 'layout', layoutsDir: __dirname + '/views/layouts' }))
