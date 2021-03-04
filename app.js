@@ -75,7 +75,7 @@ app.use('/expenses', require('./routes/expenses'))
 
 // app.use('/files', require('./routes/files'))
 
-const port = process.env.port || 3000
+let port = process.env.PORT || 3000
 app.listen(port, () => {
     console.log(`Server started on ${port} port`);
 })
