@@ -1,0 +1,38 @@
+<%- include('./partials/nav.ejs') %>
+
+
+<h3 class="text-center text-info fw-bolder"><i class="fas fa-folder-plus"></i> Xarid qo'shish</h3>
+
+
+
+<div class="container" style="width: 60%;">
+<%- include('partials/messages') %>
+
+<form action="/expenses/create" method="post">
+<div class="form-group">
+
+    <label for="title" name="title" style="color: cornsilk;">Title :</label>
+    <input 
+    type="text"
+     name="title" 
+     class="form-control" 
+     placeholder="Mahsulot nomi..."
+     value="<%= typeof title != 'undefined' ? title : '' %>"
+     >
+     <br>
+    <label for="price" name="price" style="color: cornsilk;">Price [$] :</label>
+    <input 
+    type="number"
+     name="price"
+      class="form-control" 
+      placeholder="Mahsulot narxi..."
+      value="<%= typeof price != 'undefined' ? price : '' %>"
+      >
+</div>
+    <a href="/dashboard" class="btn btn-danger">Ortga</a>
+    <button type="submit" class="btn btn-success">Saqlash</button>
+    
+</form>
+</div>
+<%- include('./partials/footer.ejs') %>
+  

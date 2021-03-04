@@ -1,0 +1,41 @@
+<h2 class="text-center text-primary">Xaridni tahrirlash</h2>
+<div class="container" style="width: 50%;">
+    <form action="/expenses/<%= product._id %>" method="POST">
+        <input type="hidden" name="_method" value="put">
+        <div class="form-group">
+            <label for="title" class="text-info">Nomi</label>
+            <input
+              type="text"
+              id="title"
+              name="title"
+              class= "form-control"
+              value="<%= product.title %>"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="price" class="text-info">Narxi $</label>
+            <input
+              type="number"
+              id="price"
+              name="price"
+              class="form-control"
+              value="<%= product.price %>"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="password" class="text-info">Sana</label>
+            <input
+              type="text"
+              id="date"
+              name="date"
+              class="form-control"
+              value="<%= product.date %>"
+            />
+          </div>
+          
+          <input type="submit" class="btn btn-outline-info" value="Saqlash">
+           <a href="/expenses/getAll" class="btn btn-warning">Bekor qilish</a>
+        </form>
+</div>

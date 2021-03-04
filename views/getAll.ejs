@@ -1,0 +1,43 @@
+
+  
+
+
+
+<%- include('./partials/nav.ejs') %>
+<div class="container">
+  
+<h2 class="text-center text-info"><i class="fas fa-book-reader large"></i>&nbsp; Xaridlar ro'yxati</h2>
+<form action="/expenses/getAll" method="get">
+  
+  <div class="row row-cols-2 row-cols-md-3 g-4">
+    <% if(products) { %>
+      <% products.forEach( x => { %>
+  
+    <div class="card mb-3" style="width: 22rem;">
+      <div class="card-header"><%= x.title.toUpperCase() %></div>
+      <div class="card-body">
+        <p class="card-text">sana: <%= x.date %></p>
+        <p class="card-text">id: <%= x._id %></p>
+        <p class="card-text">narxi: <%= x.price %> $</p>
+        <p class="card-text">QQS 10%: <%= x.price*0.1 %> $</p>
+      </div>
+      <div class="card-footer bg-transparent border-secondary">
+        <a href="/expenses/edit/<%= x._id %>" class="btn btn-outline-info"><i class="fas fa-edit lg"></i></a>
+        <a href="/expenses/delete/<%= x._id %>" class="btn btn-outline-danger" onclick="return confirm('O\'chirib tashlansimmi ?')"><i class="fas fa-trash lg"></i></a>
+      </div>
+    </div>
+  
+
+
+<% }) %>
+<% } %>
+
+<br>
+<br>
+</div>
+
+    <a href="/dashboard" class="btn btn-danger">Ortga</a>
+</form>
+</div>
+
+<%- include('./partials/footer.ejs') %>
